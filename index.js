@@ -45,7 +45,7 @@ console.log(reverseString("EPICODE"))
 */
 
 /*const upperFirst = function (str) {
-            
+        return str.charAt(0).toUpperCase() + str.slice(1)  
 }
 
 console.log(upperFirst("risolvo gli esercizi"))
@@ -95,17 +95,18 @@ console.log(crazyDiff(50))
  Scrivi una funzione chiamata "codify" che accetta una stringa come parametro.
  La funzione deve aggiungere la parola "code" all'inizio della stringa fornita e ritornare il risultato, ma se la stringa fornita comincia 
  proprio con "code" allora deve ritornarla senza modifiche.
- 
- const reverseString = function (str) {
-    return str.split('').reverse().join('')
-}
 
-console.log(reverseString("EPICODE"))
 */
 
 const codify = function (str) {
-
+    if (str.startsWith("code")) {
+        return str
+    } else {
+        return "code" + str
+    }
 }
+
+console.log(codify("ciao"))
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "check3and7" la quale accetta un numero intero positivo come parametro.
@@ -113,10 +114,22 @@ const codify = function (str) {
  SUGGERIMENTO: operatore modulo
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const check3and7 = function (n) {
+   if (n % 3 === 0 || n % 7 === 0) {
+   return true 
+   } else {
+    return false
+   }
+}
+
+console.log(check3and7(5))
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "cutString", che accetta una stringa come parametro e la ritorna senza il primo e l'ultimo carattere.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const cutString = function (str) {
+    return str.substring(1, str.length - 1)
+}
+
+console.log(cutString("ciao come stai"))
