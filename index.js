@@ -48,7 +48,24 @@ console.log(reverseString("EPICODE"))
         return str.charAt(0).toUpperCase() + str.slice(1)  
 }
 
-console.log(upperFirst("risolvo gli esercizi"))
+console.log(upperFirst("risolvo gli esercizi"))*/
+
+const upperFirstPhrase = function (str) {
+  
+  let words = str.split(" ")  //separo le parole
+  let finalString = []
+  for (let i = 0; i < words.length; i++) {           //ciclo for per prendere il primo carattere
+    let firstChar = words[i].charAt(0)
+    console.log(firstChar)
+    let uppercaseChar = firstChar.toUpperCase()      //prima lettera maiuscola
+    let cutString = words[i].slice(1)                //nuova stringa 
+    let finalWord = uppercaseChar + cutString        //nuova stringa + prima lettera maiuscola
+    finalString.push(finalWord)                      //aggiunta nuove stringhe
+  }
+  console.log(finalString.join(" "))                 //unione nuove stringhe
+}
+
+upperFirstPhrase("risolvo gli esercizi")
 
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random 
@@ -129,7 +146,7 @@ console.log(check3and7(5))
 */
 
 const cutString = function (str) {
-    return str.substring(1, str.length - 1)
+    return str.substring(1, str.length - 1)  //elimino primo e ultimo carattere
 }
 
 console.log(cutString("ciao come stai"))
